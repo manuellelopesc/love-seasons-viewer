@@ -8,7 +8,7 @@ import marAsset from "@/assets/mar.jpg.asset.json";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Alexander y Evelyn — Nossa Série" },
+      { title: "Manu e Fábio — Nossa Série" },
       { name: "description", content: "Uma história em temporadas. Para o meu amor." },
     ],
   }),
@@ -126,7 +126,7 @@ function Index() {
             className="text-5xl md:text-7xl lg:text-8xl mb-4 leading-[0.95]"
             style={{ fontFamily: "'Caveat', 'Kalam', cursive", fontWeight: 700 }}
           >
-            Alexander y<br />Evelyn
+            Manu e<br />Fábio
           </h1>
 
           <div className="flex flex-wrap items-center gap-4 mb-5 text-sm md:text-base">
