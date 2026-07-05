@@ -1,9 +1,11 @@
-import { createFileRoute } from "@tanstack/react-router";
-import { useState } from "react";
-import { Play, Info, Bell, Search, X, Lock } from "lucide-react";
-import praiaAsset from "@/assets/praia.jpg.asset.json";
-import voleiAsset from "@/assets/volei.jpg.asset.json";
 import marAsset from "@/assets/mar.jpg.asset.json";
+import praiaAsset from "@/assets/praia.jpg.asset.json";
+import videoTemporada2 from "@/assets/videos/Videotemporada2.mov";
+import videoTemporada1 from "@/assets/videos/Vídeo temporada1.mov";
+import voleiAsset from "@/assets/volei.jpg.asset.json";
+import { createFileRoute } from "@tanstack/react-router";
+import { Bell, Info, Lock, Play, Search, X } from "lucide-react";
+import { useState } from "react";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -27,6 +29,22 @@ type Season = {
   emBreve?: boolean;
 };
 
+const galeriaTemp1 = [
+  new URL("../assets/images/01-1.jpg", import.meta.url).href,
+  new URL("../assets/images/01-2.jpg", import.meta.url).href,
+  new URL("../assets/images/01-3.JPG", import.meta.url).href,
+  new URL("../assets/images/01-4.jpg", import.meta.url).href,
+  new URL("../assets/images/01-5.jpg", import.meta.url).href,
+];
+
+const galeriaTemp2 = [
+  new URL("../assets/images/02-1.jpg", import.meta.url).href,
+  new URL("../assets/images/02-2.jpg", import.meta.url).href,
+  new URL("../assets/images/02-3.jpg", import.meta.url).href,
+  new URL("../assets/images/02-4.jpg", import.meta.url).href,
+  new URL("../assets/images/01-6.jpg", import.meta.url).href,
+];
+
 const TEMPORADAS: Season[] = [
   {
     id: "t1",
@@ -34,10 +52,10 @@ const TEMPORADAS: Season[] = [
     titulo: "O Primeiro Capítulo",
     data: "ONDE TUDO COMEÇOU",
     descricao:
-      "Dois olhares, um sorriso e a certeza de que aquele verão mudaria tudo. A temporada de estreia traz os primeiros 'eu te amo', as risadas sem motivo e o som do mar como trilha sonora do nosso começo.",
+      "Uma amizade inesperada começa em uma quadra de vôlei e, sem que eles percebam, se transforma na melhor história de suas vidas. Entre risadas, viagens, pescarias, encontros especiais, fé, um pedido de namoro inesquecível e muitos sonhos compartilhados, eles descobrem que o verdadeiro amor não acontece de uma vez, ele é construído dia após dia em uma parceria real. Agora, enquanto escrevem novos capítulos rumo aos sonhos da profissão dos sonhos, casamento, ao primeiro lar e à família que desejam formar, uma única certeza permanece: essa é uma série sem previsão de fim, e as melhores temporadas ainda estão por vir.",
     hero: praiaAsset.url,
-    galeria: [praiaAsset.url],
-    videoUrl: "", // cole aqui o link do vídeo da temporada 1
+    galeria: galeriaTemp1,
+    videoUrl: videoTemporada1,
   },
   {
     id: "t2",
@@ -47,8 +65,8 @@ const TEMPORADAS: Season[] = [
     descricao:
       "A vida ficou mais intensa: vitórias, derrotas, treinos, viagens e a certeza de que somos o melhor time. Nesta temporada, descobrimos que amar também é segurar a mão do outro mesmo quando o jogo está difícil.",
     hero: voleiAsset.url,
-    galeria: [voleiAsset.url],
-    videoUrl: "", // cole aqui o link do vídeo da temporada 2
+    galeria: galeriaTemp2,
+    videoUrl: videoTemporada2,
   },
   {
     id: "t3",
@@ -126,7 +144,8 @@ function Index() {
             className="text-5xl md:text-7xl lg:text-8xl mb-4 leading-[0.95]"
             style={{ fontFamily: "'Caveat', 'Kalam', cursive", fontWeight: 700 }}
           >
-            Manu e<br />Fábio
+            Manu e<br />
+            Fábio
           </h1>
 
           <div className="flex flex-wrap items-center gap-4 mb-5 text-sm md:text-base">
@@ -135,9 +154,7 @@ function Index() {
               <span>10</span>
             </span>
             <span className="font-semibold tracking-wider">{temporada.data}</span>
-            <span className="font-semibold tracking-wider text-white/80">
-              {temporada.numero}
-            </span>
+            <span className="font-semibold tracking-wider text-white/80">{temporada.numero}</span>
           </div>
 
           <p className="text-sm md:text-base text-white/90 leading-relaxed mb-6 max-w-2xl">
@@ -150,7 +167,11 @@ function Index() {
               disabled={temporada.emBreve}
               className="flex items-center gap-2 bg-white text-black px-6 md:px-8 py-2.5 md:py-3 rounded font-bold text-base md:text-lg hover:bg-white/80 transition disabled:opacity-50 disabled:cursor-not-allowed"
             >
-              {temporada.emBreve ? <Lock className="w-5 h-5" /> : <Play className="w-5 h-5 fill-black" />}
+              {temporada.emBreve ? (
+                <Lock className="w-5 h-5" />
+              ) : (
+                <Play className="w-5 h-5 fill-black" />
+              )}
               {temporada.emBreve ? "Em Breve" : "Assistir"}
             </button>
             <button className="flex items-center gap-2 bg-white/20 backdrop-blur text-white px-6 md:px-8 py-2.5 md:py-3 rounded font-bold text-base md:text-lg hover:bg-white/30 transition">
@@ -175,8 +196,8 @@ function Index() {
               Em breve
             </h3>
             <p className="text-white/60 max-w-md mx-auto">
-              Esta temporada ainda viveremos juntos. As cenas mais bonitas ainda
-              estão por acontecer. ❤️
+              Esta temporada ainda viveremos juntos. As cenas mais bonitas ainda estão por
+              acontecer. ❤️
             </p>
           </div>
         ) : (
@@ -219,24 +240,19 @@ function Index() {
             onClick={(e) => e.stopPropagation()}
           >
             {temporada.videoUrl ? (
-              <video
-                src={temporada.videoUrl}
-                controls
-                autoPlay
-                className="w-full h-full"
-              />
+              <video src={temporada.videoUrl} controls autoPlay className="w-full h-full" />
             ) : (
               <div className="w-full h-full flex flex-col items-center justify-center text-center p-8">
                 <Play className="w-16 h-16 mb-4 text-[#e50914]" />
-                <h3 className="text-2xl font-bold mb-2">
-                  Vídeo da {temporada.numero}
-                </h3>
+                <h3 className="text-2xl font-bold mb-2">Vídeo da {temporada.numero}</h3>
                 <p className="text-white/60 max-w-md">
                   Adicione o link do vídeo no campo{" "}
+                  <code className="bg-white/10 px-2 py-0.5 rounded text-sm">videoUrl</code> desta
+                  temporada em{" "}
                   <code className="bg-white/10 px-2 py-0.5 rounded text-sm">
-                    videoUrl
-                  </code>{" "}
-                  desta temporada em <code className="bg-white/10 px-2 py-0.5 rounded text-sm">src/routes/index.tsx</code>.
+                    src/routes/index.tsx
+                  </code>
+                  .
                 </p>
               </div>
             )}
