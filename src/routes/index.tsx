@@ -1,8 +1,5 @@
-import marAsset from "@/assets/mar.jpg.asset.json";
-import praiaAsset from "@/assets/praia.jpg.asset.json";
 import videoTemporada2 from "@/assets/videos/Videotemporada2.mov";
 import videoTemporada1 from "@/assets/videos/Vídeo temporada1.mov";
-import voleiAsset from "@/assets/volei.jpg.asset.json";
 import { createFileRoute } from "@tanstack/react-router";
 import { Bell, Info, Lock, Play, Search, X } from "lucide-react";
 import { useState } from "react";
@@ -29,6 +26,10 @@ type Season = {
   emBreve?: boolean;
 };
 
+const heroTemp01 = new URL("../assets/images/heroTemp01.jpeg", import.meta.url).href;
+const heroTemp02 = new URL("../assets/images/heroTemp02.jpeg", import.meta.url).href;
+const heroTemp03 = new URL("../assets/images/heroTemp03.jpeg", import.meta.url).href;
+
 const galeriaTemp1 = [
   new URL("../assets/images/01-1.jpg", import.meta.url).href,
   new URL("../assets/images/01-2.jpg", import.meta.url).href,
@@ -53,7 +54,7 @@ const TEMPORADAS: Season[] = [
     data: "ONDE TUDO COMEÇOU",
     descricao:
       "Uma amizade inesperada começa em uma quadra de vôlei e, sem que eles percebam, se transforma na melhor história de suas vidas. Entre risadas, viagens, pescarias, encontros especiais, fé, um pedido de namoro inesquecível e muitos sonhos compartilhados, eles descobrem que o verdadeiro amor não acontece de uma vez, ele é construído dia após dia em uma parceria real. Agora, enquanto escrevem novos capítulos rumo aos sonhos da profissão dos sonhos, casamento, ao primeiro lar e à família que desejam formar, uma única certeza permanece: essa é uma série sem previsão de fim, e as melhores temporadas ainda estão por vir.",
-    hero: praiaAsset.url,
+    hero: heroTemp01,
     galeria: galeriaTemp1,
     videoUrl: videoTemporada1,
   },
@@ -64,7 +65,7 @@ const TEMPORADAS: Season[] = [
     data: "PARCERIA DENTRO E FORA DA QUADRA",
     descricao:
       "A vida ficou mais intensa: vitórias, derrotas, treinos, viagens e a certeza de que somos o melhor time. Nesta temporada, descobrimos que amar também é segurar a mão do outro mesmo quando o jogo está difícil.",
-    hero: voleiAsset.url,
+    hero: heroTemp02,
     galeria: galeriaTemp2,
     videoUrl: videoTemporada2,
   },
@@ -75,7 +76,7 @@ const TEMPORADAS: Season[] = [
     data: "EM BREVE",
     descricao:
       "Novos destinos, novos sonhos, novos 'para sempre'. A próxima temporada ainda está sendo escrita — e o melhor é que será escrita com você. Prepare o coração: as melhores cenas ainda estão por vir.",
-    hero: marAsset.url,
+    hero: heroTemp03,
     galeria: [],
     videoUrl: "",
     emBreve: true,
