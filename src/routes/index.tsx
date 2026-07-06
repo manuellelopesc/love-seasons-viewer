@@ -50,10 +50,10 @@ const TEMPORADAS: Season[] = [
   {
     id: "t1",
     numero: "TEMPORADA 1",
-    titulo: "O Primeiro Capítulo",
+    titulo: "O início de nós",
     data: "ONDE TUDO COMEÇOU",
     descricao:
-      "Uma amizade inesperada começa em uma quadra de vôlei e, sem que eles percebam, se transforma na melhor história de suas vidas. Entre risadas, viagens, pescarias, encontros especiais, fé, um pedido de namoro inesquecível e muitos sonhos compartilhados, eles descobrem que o verdadeiro amor não acontece de uma vez, ele é construído dia após dia em uma parceria real. Agora, enquanto escrevem novos capítulos rumo aos sonhos da profissão dos sonhos, casamento, ao primeiro lar e à família que desejam formar, uma única certeza permanece: essa é uma série sem previsão de fim, e as melhores temporadas ainda estão por vir.",
+      "O que parecia ser apenas uma amizade em uma quadra de vôlei toma um rumo completamente inesperado. Entre risadas, viagens, pescarias, encontros especiais e um pedido de namoro inesquecível, dois jovens descobrem que algumas histórias simplesmente acontecem quando menos se espera. E, sem perceber, começam a escrever o capítulo mais importante de suas vidas.",
     hero: heroTemp01,
     galeria: galeriaTemp1,
     videoUrl: videoTemporada1,
@@ -61,10 +61,10 @@ const TEMPORADAS: Season[] = [
   {
     id: "t2",
     numero: "TEMPORADA 2",
-    titulo: "Nosso Jogo a Dois",
-    data: "PARCERIA DENTRO E FORA DA QUADRA",
+    titulo: "Parceria de aventuras",
+    data: "DA QUADRA PARA O LAGO",
     descricao:
-      "A vida ficou mais intensa: vitórias, derrotas, treinos, viagens e a certeza de que somos o melhor time. Nesta temporada, descobrimos que amar também é segurar a mão do outro mesmo quando o jogo está difícil.",
+        "Com o passar dos episódios, a novidade dá lugar à certeza. Entre a correria da rotina, novas aventuras, quilômetros percorridos e sonhos compartilhados, eles descobrem que o amor se fortalece justamente nas pequenas escolhas do dia a dia. E, sem perceber, transformam momentos simples nos capítulos mais especiais da história.",
     hero: heroTemp02,
     galeria: galeriaTemp2,
     videoUrl: videoTemporada2,
@@ -75,7 +75,7 @@ const TEMPORADAS: Season[] = [
     titulo: "O Que Ainda Viveremos",
     data: "EM BREVE",
     descricao:
-      "Novos destinos, novos sonhos, novos 'para sempre'. A próxima temporada ainda está sendo escrita — e o melhor é que será escrita com você. Prepare o coração: as melhores cenas ainda estão por vir.",
+      "Cada capítulo vivido até aqui foi apenas o começo. Enquanto novos sonhos ganham espaço no roteiro e o futuro é escrito um dia de cada vez, eles seguem lado a lado, acreditando que o melhor da história ainda está por acontecer. Uma única certeza permanece: essa é uma série sem previsão de fim, e as melhores temporadas ainda estão por vir.",
     hero: heroTemp03,
     galeria: [],
     videoUrl: "",
