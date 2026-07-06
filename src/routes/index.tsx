@@ -250,7 +250,7 @@ function Index() {
                 <video src={temporada.videoUrl} controls autoPlay className="w-full h-full" />
               )
             ) : (
-            ) : (
+
               <div className="w-full h-full flex flex-col items-center justify-center text-center p-8">
                 <Play className="w-16 h-16 mb-4 text-[#e50914]" />
                 <h3 className="text-2xl font-bold mb-2">Vídeo da {temporada.numero}</h3>
