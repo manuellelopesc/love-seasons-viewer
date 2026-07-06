@@ -1,5 +1,5 @@
-import videoTemporada2 from "@/assets/videos/Videotemporada2.mov";
-import videoTemporada1 from "@/assets/videos/Vídeo temporada1.mov";
+const videoTemporada1 = "";
+const videoTemporada2 = "";
 import { createFileRoute } from "@tanstack/react-router";
 import { Bell, Info, Lock, Play, Search, X } from "lucide-react";
 import { useState } from "react";
