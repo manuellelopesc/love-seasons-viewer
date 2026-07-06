@@ -1,5 +1,5 @@
-const videoTemporada1 = "";
-const videoTemporada2 = "";
+const videoTemporada1 = "https://drive.google.com/file/d/1JLWZnNH8X75lC_KTmoMYv-dE-trYfTFX/preview";
+const videoTemporada2 = "https://drive.google.com/file/d/1rrWfzE_59u-U1szFzwtYGnqnrlJuKIJ1/preview";
 import { createFileRoute } from "@tanstack/react-router";
 import { Bell, Info, Lock, Play, Search, X } from "lucide-react";
 import { useState } from "react";
