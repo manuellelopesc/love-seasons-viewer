@@ -239,7 +239,17 @@ function Index() {
             onClick={(e) => e.stopPropagation()}
           >
             {temporada.videoUrl ? (
-              <video src={temporada.videoUrl} controls autoPlay className="w-full h-full" />
+              temporada.videoUrl.includes("drive.google.com") ? (
+                <iframe
+                  src={temporada.videoUrl}
+                  allow="autoplay; fullscreen"
+                  allowFullScreen
+                  className="w-full h-full"
+                />
+              ) : (
+                <video src={temporada.videoUrl} controls autoPlay className="w-full h-full" />
+              )
+            ) : (
             ) : (
               <div className="w-full h-full flex flex-col items-center justify-center text-center p-8">
                 <Play className="w-16 h-16 mb-4 text-[#e50914]" />
