@@ -1,5 +1,5 @@
-const videoTemporada1 = "";
-const videoTemporada2 = "";
+const videoTemporada1 = "https://drive.google.com/file/d/1JLWZnNH8X75lC_KTmoMYv-dE-trYfTFX/preview";
+const videoTemporada2 = "https://drive.google.com/file/d/1rrWfzE_59u-U1szFzwtYGnqnrlJuKIJ1/preview";
 import { createFileRoute } from "@tanstack/react-router";
 import { Bell, Info, Lock, Play, Search, X } from "lucide-react";
 import { useState } from "react";
@@ -106,10 +106,8 @@ function Index() {
       </header>
 
       {/* HERO */}
-      <section
-        key={temporada.id}
-        className="relative min-h-[100vh] flex items-end animate-[fadeIn_0.6s_ease]"
-      >
+      <section className="relative min-h-[100vh] flex items-end">
+
         <div
           className="absolute inset-0 bg-cover bg-center transition-all duration-700"
           style={{ backgroundImage: `url(${temporada.hero})` }}
@@ -241,8 +239,18 @@ function Index() {
             onClick={(e) => e.stopPropagation()}
           >
             {temporada.videoUrl ? (
-              <video src={temporada.videoUrl} controls autoPlay className="w-full h-full" />
+              temporada.videoUrl.includes("drive.google.com") ? (
+                <iframe
+                  src={temporada.videoUrl}
+                  allow="autoplay; fullscreen"
+                  allowFullScreen
+                  className="w-full h-full"
+                />
+              ) : (
+                <video src={temporada.videoUrl} controls autoPlay className="w-full h-full" />
+              )
             ) : (
+
               <div className="w-full h-full flex flex-col items-center justify-center text-center p-8">
                 <Play className="w-16 h-16 mb-4 text-[#e50914]" />
                 <h3 className="text-2xl font-bold mb-2">Vídeo da {temporada.numero}</h3>
