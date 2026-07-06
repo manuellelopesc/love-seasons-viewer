@@ -106,7 +106,7 @@ function Index() {
       </header>
 
       {/* HERO */}
-      <section className="relative min-h-[100vh] flex items-end">
+      <section className="relative min-h-[100vh] flex items-end pt-24">
 
         <div
           className="absolute inset-0 bg-cover bg-center transition-all duration-700"
@@ -117,14 +117,14 @@ function Index() {
 
         <div className="relative z-10 w-full px-6 md:px-12 pb-16 md:pb-24 max-w-3xl">
           {/* Season selector */}
-          <div className="mb-6">
+          <div className="mb-6 relative z-40">
             <label className="block text-xs tracking-[0.3em] text-white/60 mb-2">
               ESCOLHA A TEMPORADA
             </label>
             <select
               value={atual}
               onChange={(e) => setAtual(e.target.value)}
-              className="bg-black/60 backdrop-blur border border-white/30 px-4 py-2.5 text-sm md:text-base rounded-sm focus:outline-none focus:border-white cursor-pointer hover:bg-black/80 transition"
+              className="bg-black/80 border border-white/30 px-4 py-2.5 text-sm md:text-base rounded-sm focus:outline-none focus:border-white cursor-pointer hover:bg-black transition w-full md:w-auto"
             >
               {TEMPORADAS.map((t) => (
                 <option key={t.id} value={t.id} className="bg-black">
