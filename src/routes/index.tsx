@@ -106,10 +106,8 @@ function Index() {
       </header>
 
       {/* HERO */}
-      <section
-        key={temporada.id}
-        className="relative min-h-[100vh] flex items-end animate-[fadeIn_0.6s_ease]"
-      >
+      <section className="relative min-h-[100vh] flex items-end">
+
         <div
           className="absolute inset-0 bg-cover bg-center transition-all duration-700"
           style={{ backgroundImage: `url(${temporada.hero})` }}
