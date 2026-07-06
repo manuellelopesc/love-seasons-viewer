@@ -106,7 +106,7 @@ function Index() {
       </header>
 
       {/* HERO */}
-      <section className="relative min-h-[100vh] flex items-end">
+      <section className="relative min-h-[100vh] flex items-end pt-24">
 
         <div
           className="absolute inset-0 bg-cover bg-center transition-all duration-700"
